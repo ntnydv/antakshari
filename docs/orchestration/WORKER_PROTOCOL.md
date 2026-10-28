@@ -43,7 +43,7 @@ Example inspection commands, run from the repository clone:
 git fetch origin main
 git rev-parse origin/main
 git show origin/main:orchestration/queue.json
-python3 tools/taskctl.py show BOOT-001
+node tools/taskctl.mts show BOOT-001
 ```
 
 Resolve and record the baseline before creating the worktree. The following placeholder must be replaced with the recorded 40-character commit SHA:
@@ -69,8 +69,8 @@ If a design is contradictory or a dependency's interface is incomplete, preserve
 Run the assigned verification entrypoint inside the task worktree:
 
 ```sh
-python3 tools/taskctl.py show BOOT-001
-python3 tools/taskctl.py verify BOOT-001
+node tools/taskctl.mts show BOOT-001
+node tools/taskctl.mts verify BOOT-001
 ```
 
 The task tool reads the task's executable checks and required outputs. Missing tools, missing implementation, absent tests, a zero-test selection, or a failing command must not become success. Missing prerequisites yield `blocked`; an implemented behaviour that fails its required check yields `failed` until repaired. Record the real exit code and the environment. Never replace a failed integration check with a smaller passing check and claim the task is verified.
@@ -135,9 +135,9 @@ Operator commands are provided by the checked-in tools:
 
 ```sh
 python3 tools/validate_plan.py
-python3 tools/taskctl.py ready
-python3 tools/taskctl.py ingest-review <REVIEW_JSON_PATH>
-python3 tools/taskctl.py dispatch --batch-id batch-0002
+node tools/taskctl.mts ready
+node tools/taskctl.mts ingest-review <REVIEW_JSON_PATH>
+node tools/taskctl.mts dispatch --batch-id batch-0002 --baseline-sha <VERIFIED_MAIN_SHA>
 ```
 
 `ingest-review` consumes an orchestrator-authored review record after merge, including `reviewer_role: "orchestrator"`, `task_id`, `merge_sha`, `base_sha`, `reviewed_at`, and true `checks_verified`/`scope_verified` fields. Use the tool's current `--help` and validation for any additional required fields. Workers must never invoke `ingest-review` or `dispatch`.
