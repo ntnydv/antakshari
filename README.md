@@ -47,6 +47,19 @@ At five starts every30minutes, one worker can start at most240 tasks/day. The fu
 
 ## Local planning checks
 
+TypeScript task inspection and verification are now available without Python:
+
+```sh
+node tools/taskctl.mts status
+node tools/taskctl.mts ready --limit 5
+node tools/taskctl.mts verify BOOT-001
+node --test tests/taskctl.test.mts
+```
+
+Use Node 22.18 or later. Queue mutations and planning generation still use the
+legacy commands below while their state-safety protocol is migrated. See the
+[migration scope and remaining work](docs/orchestration/TYPESCRIPT_MIGRATION.md).
+
 ```sh
 python3 tools/validate_plan.py
 python3 -m unittest discover -s tests -v
