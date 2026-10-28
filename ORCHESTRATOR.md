@@ -31,7 +31,7 @@ The scheduling trigger alone does not supply GitHub permissions or run an extern
 ## Local commands
 
 ```sh
-python3 tools/validate_plan.py
+node tools/validate-plan.mts
 node tools/taskctl.mts status
 node tools/taskctl.mts ready --limit 5
 node tools/taskctl.mts dispatch --batch-id batch-0002 --baseline-sha <VERIFIED_MAIN_SHA>

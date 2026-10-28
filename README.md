@@ -53,7 +53,8 @@ TypeScript task inspection and verification are now available without Python:
 node tools/taskctl.mts status
 node tools/taskctl.mts ready --limit 5
 node tools/taskctl.mts verify BOOT-001
-node --test tests/taskctl.test.mts tests/taskctl-mutations.test.mts
+node tools/validate-plan.mts
+node --test tests/*.test.mts
 ```
 
 Use Node 22.18 or later. Queue dispatch, review ingestion and recovery also use
@@ -61,14 +62,14 @@ TypeScript. Planning generation still uses Python. See the
 [migration scope and remaining work](docs/orchestration/TYPESCRIPT_MIGRATION.md).
 
 ```sh
-python3 tools/validate_plan.py
+node tools/validate-plan.mts
 python3 -m unittest discover -s tests -v
 node tools/taskctl.mts status
 node tools/taskctl.mts ready --limit 5
 node tools/taskctl.mts show BOOT-001
 ```
 
-Planning checks need Python's standard library; task orchestration uses Node's standard library. The old `taskctl.py` command is a compatibility launcher for the TypeScript implementation. Application verification additionally needs the toolchain created by bootstrap tasks. `verify` intentionally fails when implementation, tests or tools are missing.
+Planning validation and task orchestration use Node's standard library. The old `taskctl.py` and `validate_plan.py` commands are compatibility launchers for TypeScript. Python is still needed for generation, pinned operations checks and launcher compatibility tests. Application verification additionally needs the toolchain created by bootstrap tasks. `verify` intentionally fails when implementation, tests or tools are missing.
 
 Regenerate cards and indexes from the authored slice catalogue with `python3 tools/planning/generate.py`. It preserves existing orchestration state/queue; do not run it to erase worker progress. Contract/policy seed generation is `python3 tools/planning/write_contracts.py`; run only when intentionally updating the baseline contracts, never over active schema changes without review.
 
