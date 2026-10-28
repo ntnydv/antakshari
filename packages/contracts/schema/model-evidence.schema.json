@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:model-evidence:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "candidateId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sectionId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "relation": {
+      "type": "string",
+      "enum": [
+        "MATCH",
+        "MISMATCH",
+        "INSUFFICIENT"
+      ]
+    },
+    "matchedSpanIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,128}$"
+      },
+      "maxItems": 20
+    },
+    "contradictionCodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "maxItems": 10
+    },
+    "insufficientEvidence": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "candidateId",
+    "sectionId",
+    "relation",
+    "matchedSpanIds",
+    "contradictionCodes",
+    "insufficientEvidence"
+  ],
+  "additionalProperties": false
+}

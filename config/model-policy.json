@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-27",
+  "baseUrl": "https://api.meta.ai/v1",
+  "dataMode": "standard",
+  "routes": {
+    "transcription": {
+      "model": "muse-voice-transcribe-1.0",
+      "enabled": false,
+      "gate": "account_smoke_and_singing_evaluation"
+    },
+    "textEvidence": {
+      "model": "muse-spark-1.3",
+      "enabled": false,
+      "gate": "account_smoke_and_schema_evaluation"
+    },
+    "hostText": {
+      "model": "muse-spark-1.3",
+      "enabled": false,
+      "fallback": "curated_template"
+    },
+    "audioFallback": {
+      "model": "muse-spark-1.2",
+      "enabled": false,
+      "gate": "audio_singing_benchmark"
+    },
+    "offlineVisualReview": {
+      "model": "muse-spark-1.3",
+      "enabled": false,
+      "gate": "editor_opt_in"
+    },
+    "offlineComplexAudit": {
+      "model": "muse-wonder-1.0",
+      "enabled": false,
+      "gate": "editor_opt_in_budget"
+    },
+    "offlineImageClue": {
+      "model": "muse-image-1.0",
+      "enabled": false,
+      "gate": "editor_opt_in_and_rights"
+    }
+  },
+  "unsupportedAssumptions": [
+    "native_asr_confidence",
+    "word_timestamps",
+    "muse_text_to_speech",
+    "guaranteed_singing_accuracy",
+    "video_generation_api"
+  ],
+  "timeoutsMs": {
+    "connection": 3000,
+    "verdictTarget": 4000,
+    "verdictHardLimit": 8000
+  },
+  "maximumCaptureMs": 20000,
+  "liveCallsRequireServerSecret": true,
+  "rawTranscriptLogging": false
+}

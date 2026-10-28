@@ -1,0 +1,34 @@
+# Component design index
+
+- [C01 — Versioned contracts](../design/contracts.md) — 16 delivery slices / 64 tasks.
+- [C02 — Flutter application shell](../design/flutter-shell.md) — 16 delivery slices / 64 tasks.
+- [C03 — Identity and session access](../design/identity.md) — 16 delivery slices / 64 tasks.
+- [C04 — Player profiles and preferences](../design/profiles.md) — 16 delivery slices / 64 tasks.
+- [C05 — Private room service](../design/rooms.md) — 16 delivery slices / 64 tasks.
+- [C06 — Lobby, team selection and readiness](../design/lobby-teams.md) — 16 delivery slices / 64 tasks.
+- [C07 — Invitations and app links](../design/invitations.md) — 16 delivery slices / 64 tasks.
+- [C08 — Presence and reconnection](../design/presence-reconnect.md) — 16 delivery slices / 64 tasks.
+- [C09 — Authoritative match engine](../design/match-engine.md) — 16 delivery slices / 64 tasks.
+- [C10 — Scoring, steals and disputes](../design/scoring.md) — 16 delivery slices / 64 tasks.
+- [C11 — Mobile audio capture](../design/audio-capture.md) — 16 delivery slices / 64 tasks.
+- [C12 — Realtime audio relay](../design/audio-relay.md) — 16 delivery slices / 64 tasks.
+- [C13 — Cue media playback](../design/media-playback.md) — 16 delivery slices / 64 tasks.
+- [C14 — Meta Muse gateway](../design/muse-gateway.md) — 16 delivery slices / 64 tasks.
+- [C15 — Answer adjudication](../design/answer-adjudication.md) — 16 delivery slices / 64 tasks.
+- [C16 — Song catalogue and rights](../design/song-catalogue.md) — 16 delivery slices / 64 tasks.
+- [C17 — AI host and stage presentation](../design/host-presenter.md) — 16 delivery slices / 64 tasks.
+- [C18 — Results and rematches](../design/results-rematch.md) — 16 delivery slices / 64 tasks.
+- [C19 — Safety, privacy and access policies](../design/safety-privacy.md) — 16 delivery slices / 64 tasks.
+- [C20 — Content operations console](../design/content-admin.md) — 16 delivery slices / 64 tasks.
+- [C21 — Observability, analytics and costs](../design/telemetry.md) — 16 delivery slices / 64 tasks.
+- [C22 — Build, Firebase infrastructure and release](../design/platform-release.md) — 16 delivery slices / 64 tasks.
+- [R01 — Classic Antakshari](../rounds/01-classic-chain.md) — 16 delivery slices / 64 tasks.
+- [R02 — Dhun Pehchano](../rounds/02-dhun-pehchano.md) — 16 delivery slices / 64 tasks.
+- [R03 — Antara Se Mukhda](../rounds/03-antara-to-mukhda.md) — 16 delivery slices / 64 tasks.
+- [R04 — Mukhda Se Antara](../rounds/04-mukhda-to-antara.md) — 16 delivery slices / 64 tasks.
+- [R05 — Agla Bol](../rounds/05-agla-bol.md) — 16 delivery slices / 64 tasks.
+- [R06 — Shabd Se Geet](../rounds/06-shabd-se-geet.md) — 16 delivery slices / 64 tasks.
+- [R07 — Hum & Guess](../rounds/07-hum-and-guess.md) — 16 delivery slices / 64 tasks.
+- [R08 — Do Gaane Ek Clue](../rounds/08-two-song-fragments.md) — 16 delivery slices / 64 tasks.
+- [R09 — Silent Video](../rounds/09-silent-video.md) — 16 delivery slices / 64 tasks.
+- [R10 — Tasveer Se Geet](../rounds/10-picture-clue.md) — 16 delivery slices / 64 tasks.

@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:adjudication:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "attemptId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "grantGeneration": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "accepted",
+        "rejected",
+        "uncertain",
+        "invalid_attempt",
+        "cancelled"
+      ]
+    },
+    "reasonCodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "VALID",
+          "WRONG_SONG",
+          "WRONG_SECTION",
+          "WRONG_START_SOUND",
+          "KEYWORD_MISSING",
+          "REPEAT_SONG",
+          "NO_FINAL_TRANSCRIPT",
+          "INSUFFICIENT_EVIDENCE",
+          "PROVIDER_FAILURE",
+          "STALE_ATTEMPT",
+          "CANCELLED",
+          "CAPTURE_FAILURE",
+          "UNSUPPORTED_CATALOGUE"
+        ]
+      },
+      "maxItems": 12
+    },
+    "songIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,128}$"
+      },
+      "maxItems": 2
+    },
+    "sectionIds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_-]{1,128}$"
+      },
+      "maxItems": 2
+    },
+    "evidenceId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "policyVersion": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "provenance": {
+      "type": "string",
+      "enum": [
+        "AUTO_EVALUATED",
+        "PARTICIPANT_REVIEW",
+        "DETERMINISTIC_FIXTURE"
+      ]
+    },
+    "settledAtMs": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "attemptId",
+    "grantGeneration",
+    "verdict",
+    "reasonCodes",
+    "songIds",
+    "sectionIds",
+    "evidenceId",
+    "policyVersion",
+    "provenance",
+    "settledAtMs"
+  ],
+  "additionalProperties": false
+}

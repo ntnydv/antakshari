@@ -1,0 +1,18 @@
+{
+  "asOf": "2026-10-27",
+  "currency": "USD",
+  "source": "https://dev.meta.ai/docs/pricing-rate-limits",
+  "spark": {
+    "inputPerMillion": 1.25,
+    "outputPerMillion": 4.25,
+    "cachedInputPerMillion": 0.15
+  },
+  "wonder": {
+    "inputPerMillion": 4,
+    "outputPerMillion": 20,
+    "cachedInputPerMillion": 0.2
+  },
+  "asrPerHour": 0.18,
+  "imagePerImage": 0.01,
+  "note": "Reference rates, not a quote or total app cost. Recheck before live rollout."
+}

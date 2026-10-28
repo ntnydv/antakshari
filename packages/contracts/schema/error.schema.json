@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:error:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "code": {
+      "type": "string",
+      "enum": [
+        "UNAUTHENTICATED",
+        "PERMISSION_DENIED",
+        "INVALID_ARGUMENT",
+        "VERSION_CONFLICT",
+        "NOT_READY",
+        "ROOM_FULL",
+        "INVITE_INVALID",
+        "RATE_LIMITED",
+        "TEMPORARILY_UNAVAILABLE",
+        "BUDGET_EXHAUSTED",
+        "STALE_ATTEMPT",
+        "UPGRADE_REQUIRED"
+      ]
+    },
+    "messageKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "retryAfterMs": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "currentVersion": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "requestId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "code",
+    "messageKey",
+    "retryable",
+    "retryAfterMs",
+    "currentVersion",
+    "requestId"
+  ],
+  "additionalProperties": false
+}

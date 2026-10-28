@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:snapshot:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "roomId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "matchId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "seq": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "lobby",
+        "preparing",
+        "countdown",
+        "round_intro",
+        "cue",
+        "answer_open",
+        "recording",
+        "adjudicating",
+        "reveal",
+        "round_summary",
+        "finished",
+        "paused",
+        "abandoned"
+      ]
+    },
+    "phaseToken": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "roundId": {
+      "type": "string",
+      "enum": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10"
+      ]
+    },
+    "roundInstanceId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "promptId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "activeUid": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "deadlineMs": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "serverNowMs": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "A": {
+          "type": "integer"
+        },
+        "B": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "A",
+        "B"
+      ],
+      "additionalProperties": false
+    },
+    "catalogueVersion": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "rulesVersion": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "resultStatus": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "verified",
+        "provisional",
+        "abandoned"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "roomId",
+    "matchId",
+    "version",
+    "seq",
+    "phase",
+    "phaseToken",
+    "roundId",
+    "roundInstanceId",
+    "promptId",
+    "activeUid",
+    "deadlineMs",
+    "serverNowMs",
+    "scores",
+    "catalogueVersion",
+    "rulesVersion",
+    "resultStatus"
+  ],
+  "additionalProperties": false
+}

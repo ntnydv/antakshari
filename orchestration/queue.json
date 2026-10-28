@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "batch_id": "batch-0001",
+  "status": "ready",
+  "worker": "opencode",
+  "max_concurrency": 5,
+  "cadence_minutes": 30,
+  "baseline_ref": "main",
+  "baseline_sha": null,
+  "instructions": "Resolve main to an immutable commit at claim; record it in each task result. No more than five active tasks.",
+  "task_ids": [
+    "BOOT-001",
+    "BOOT-002",
+    "BOOT-003",
+    "BOOT-004",
+    "BOOT-005"
+  ],
+  "task_cards": [
+    "backlog/tasks/BOOT/BOOT-001.md",
+    "backlog/tasks/BOOT/BOOT-002.md",
+    "backlog/tasks/BOOT/BOOT-003.md",
+    "backlog/tasks/BOOT/BOOT-004.md",
+    "backlog/tasks/BOOT/BOOT-005.md"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "tasks": 2056,
+  "components": 32,
+  "rounds": 10,
+  "implementation_slices": 512,
+  "bootstrap": 8,
+  "implementation_tasks": 512,
+  "verification_tasks": 1536,
+  "first_day_candidates": 240,
+  "dependency_edges": 3897,
+  "maximum_dependency_wave": 12,
+  "backlog_sha256": "a224ca89d42717f137c8c311238e109b8bae9def28faeb276790b7bc320ec157"
+}

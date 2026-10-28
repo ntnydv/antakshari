@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+.dart_tool/
+build/
+node_modules/
+.firebase/
+*.log
+.DS_Store
+orchestration/local-reviews/
+orchestration/local-logs/
+orchestration/.taskctl.lock

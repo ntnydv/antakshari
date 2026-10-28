@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "pilot-v1",
+  "maxPlayers": 4,
+  "standardRounds": 6,
+  "marathonRounds": 10,
+  "marathonRequiresMode": "2v2",
+  "disabledIn1v1": [
+    "R07"
+  ],
+  "primaryOpportunitiesPerTeam": 2,
+  "roundCap": 40,
+  "roundFloor": -10,
+  "hintReduction": 5,
+  "wrongBuzzPenalty": 5,
+  "defaultStealPoints": 10,
+  "reconnectGraceMs": 30000,
+  "maxGracePerInterruptedTurn": 1,
+  "partyBuzzerContenderMs": 100,
+  "defaultAnswerAllocation": "assigned_equal_turns",
+  "maxCaptureMs": 20000,
+  "rounds": {
+    "R01": {
+      "startMs": 20000,
+      "captureMs": 15000,
+      "maxPoints": 20,
+      "steal": false
+    },
+    "R02": {
+      "cueMs": 5000,
+      "identifyMs": 8000,
+      "captureMs": 15000,
+      "identifyPoints": 10,
+      "singPoints": 10,
+      "steal": true
+    },
+    "R03": {
+      "startMs": 15000,
+      "captureMs": 20000,
+      "maxPoints": 20,
+      "steal": true
+    },
+    "R04": {
+      "startMs": 20000,
+      "captureMs": 20000,
+      "maxPoints": 20,
+      "steal": true
+    },
+    "R05": {
+      "startMs": 10000,
+      "captureMs": 15000,
+      "maxPoints": 20,
+      "steal": true
+    },
+    "R06": {
+      "startMs": 15000,
+      "captureMs": 20000,
+      "maxPoints": 20,
+      "steal": false
+    },
+    "R07": {
+      "readyMs": 10000,
+      "humMs": 20000,
+      "guessMs": 10000,
+      "maxPoints": 20,
+      "singPoints": 0,
+      "steal": true
+    },
+    "R08": {
+      "cuePartMs": 4000,
+      "gapMs": 500,
+      "answerMs": 15000,
+      "pointsPerSong": 10,
+      "singPoints": 0,
+      "stealPerSong": 5
+    },
+    "R09": {
+      "cueMs": 6000,
+      "startMs": 12000,
+      "captureMs": 20000,
+      "identifyPoints": 10,
+      "singPoints": 10,
+      "steal": true
+    },
+    "R10": {
+      "startMs": 15000,
+      "captureMs": 20000,
+      "identifyPoints": 10,
+      "singPoints": 10,
+      "steal": true
+    }
+  }
+}

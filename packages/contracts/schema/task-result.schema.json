@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:task-result:v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^(BOOT-[0-9]{3}|[CR][0-9]{2}-[0-9]{2}-[IUAX])$"
+    },
+    "worker": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "batch_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "implemented",
+        "blocked",
+        "failed"
+      ]
+    },
+    "base_sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "implementation_sha": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 5000
+    },
+    "changed_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "maxItems": 200
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "command": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "log_path": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "environment": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          }
+        },
+        "required": [
+          "command",
+          "exit_code",
+          "log_path",
+          "environment"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 30
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "maxItems": 20
+    },
+    "remaining_risks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "maxItems": 20
+    },
+    "provider_mode": {
+      "type": "string",
+      "enum": [
+        "not_used",
+        "fake",
+        "live"
+      ]
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "maxItems": 30
+    }
+  },
+  "required": [
+    "schema_version",
+    "task_id",
+    "worker",
+    "batch_id",
+    "status",
+    "base_sha",
+    "implementation_sha",
+    "summary",
+    "changed_files",
+    "checks",
+    "blockers",
+    "remaining_risks",
+    "provider_mode",
+    "evidence_paths"
+  ],
+  "additionalProperties": false
+}
