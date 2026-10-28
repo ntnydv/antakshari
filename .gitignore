@@ -13,3 +13,6 @@ node_modules/
 orchestration/local-reviews/
 orchestration/local-logs/
 orchestration/.taskctl.lock
+orchestration/.taskctl-write.lock/
+orchestration/.taskctl-transaction.json
+orchestration/**/.taskctl-*.tmp

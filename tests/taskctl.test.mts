@@ -117,7 +117,7 @@ test('symlink outputs and cwd outside repo fail', t => {
   symlinkSync(outside.root, join(g.root, 'escape'));
   assert.throws(() => g.repo.verify('A'), /invalid verification cwd/);
 });
-test('CLI refuses mutation and unknown options without state changes', t => {
+test('CLI refuses incomplete mutation requests and unknown options without state changes', t => {
   const f = fixture(t, [task('A')]), before = f.snapshot();
   const cli = resolve(dirname(fileURLToPath(import.meta.url)), '../tools/taskctl.mts');
   for (const args of [['dispatch', '--batch-id', 'b1'], ['ingest-review', 'file.json'], ['status', '--force'], ['ready', '--limit', '6']]) {

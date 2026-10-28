@@ -32,13 +32,21 @@ The scheduling trigger alone does not supply GitHub permissions or run an extern
 
 ```sh
 python3 tools/validate_plan.py
-python3 tools/taskctl.py status
-python3 tools/taskctl.py ready --limit 5
-python3 tools/taskctl.py dispatch --batch-id batch-0002
-python3 tools/taskctl.py ingest-review orchestration/local-reviews/TASK_ID.json
+node tools/taskctl.mts status
+node tools/taskctl.mts ready --limit 5
+node tools/taskctl.mts dispatch --batch-id batch-0002 --baseline-sha <VERIFIED_MAIN_SHA>
+node tools/taskctl.mts ingest-review orchestration/local-reviews/TASK_ID.json
 ```
 
 Use a clean checkout and read the current CLI help. Dispatch and review ingestion change local state only; they do not authenticate to GitHub, push, merge PRs or verify remote evidence. The orchestrator performs those steps through its authenticated tools. Local review/log directories are ignored so tokens or copied logs are not committed accidentally.
+
+New batches require `--baseline-sha` with the independently verified main commit.
+Use `node tools/taskctl.mts expire` to move expired leases to `needs_review`.
+The Python task CLI only forwards to the same TypeScript implementation. Before
+changing an orchestration checkout to this version, finish/stop any older writer
+invocation. For pending transaction journals or locks, follow the
+[recovery protocol](docs/orchestration/TYPESCRIPT_MIGRATION.md#queue-writes-and-recovery).
+Never clear a lock merely because its timestamp is old.
 
 ## Scope changes and integration work
 
