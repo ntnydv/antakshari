@@ -15,7 +15,8 @@ node tools/taskctl.mts status
 node tools/taskctl.mts ready --limit 5
 node tools/taskctl.mts show BOOT-001
 node tools/taskctl.mts verify BOOT-001
-node --test tests/taskctl.test.mts tests/taskctl-mutations.test.mts
+node tools/validate-plan.mts
+node --test tests/*.test.mts
 ```
 
 `--root DIRECTORY` can precede the command. Verification accepts explicit argv
@@ -38,7 +39,7 @@ that any provider/device/release gate passed.
 
 ## Remaining migration work
 
-1. Port the plan validator, catalogue generator, contract seed generator and their
+1. Port the catalogue generator, contract seed generator and their
    checks, preserving stable task IDs and state history.
 2. Replace Python operations-task outputs and verification commands in future
    task cards through a reviewed plan revision. Reconcile already dispatched
@@ -52,6 +53,22 @@ missing. Existing pinned task cards therefore continue to work with Node 22.18+
 installed. The Python task module's internal class API is retired; its behavior
 tests have moved to TypeScript. Unmigrated planning and operation scripts still
 require Python; this is not a claim that Python has been removed from the repo.
+
+The plan validator now also runs in TypeScript. Its Python filename is a CLI
+compatibility launcher; its internal Python function API is retired. Validation
+checks the complete task graph, file ownership, first-day closure, component and
+round inventory, cards/design paths, JSON syntax, supported Markdown links and
+fences, approved model IDs and required privacy settings. It uses the task CLI's
+ownership matcher, so planning and dispatch agree on glob conflicts. It reports
+potential secret patterns without printing values. This pattern scan is a
+heuristic, not proof that arbitrary text is free of sensitive data.
+
+Local review/log directories, pending lock/journal files, generated build output
+and dependency trees are excluded from the content scan. The validator does not
+follow symlink trees. Required plan/card/design/policy files and local link
+targets must resolve inside the repository. Markdown validation supports the
+inline/reference link and heading forms used by this package; it does not claim
+to be a complete CommonMark renderer.
 
 ## Queue writes and recovery
 
