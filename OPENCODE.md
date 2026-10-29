@@ -1,12 +1,12 @@
 # OpenCode worker entrypoint
 
-This repository is planned for an external OpenCode coordinator polling every 30 minutes. Take **at most five assigned tasks per poll and at most five active tasks total**. This file is a worker prompt and protocol; it does not start or connect an OpenCode process.
+Codex orchestrates OpenCode and Codex implementation agents together. Take **at most five active task IDs total across both runtimes**. Read the per-task `worker` in state and `task_workers` in the queue; a queue-wide `worker: mixed` does not assign every task to OpenCode. This file is a worker prompt and protocol; it does not itself start a process.
 
 Read [the worker protocol](docs/orchestration/WORKER_PROTOCOL.md) and [first-day plan](docs/orchestration/ONE_DAY_PLAN.md). Current assignments are in [orchestration/queue.json](orchestration/queue.json); task definitions are in [backlog/index.json](backlog/index.json).
 
 ## Copy-paste worker prompt
 
-> You are the OpenCode implementation worker for `ntnydv/antakshari`. Poll remote main every 30 minutes. Read the current queue and state from one pinned planning commit. Work only on the task IDs assigned to `opencode`, with no more than five active tasks. Use `baseline_sha` when present; otherwise resolve `baseline_ref` to an exact commit once and record it as `base_sha`. Never branch from an unrecorded moving ref.
+> You are the OpenCode implementation worker for `ntnydv/antakshari`. Read the current queue and state from one pinned planning commit. Work only on task IDs whose per-task worker is `opencode`; if no per-task mapping exists, use the queue-wide worker. Codex may simultaneously implement other assigned tasks, with a combined maximum of five active task IDs. Do not run a duplicate polling loop alongside the orchestrator. Use `baseline_sha` when present; otherwise resolve `baseline_ref` to an exact commit once and record it as `base_sha`. Never branch from an unrecorded moving ref.
 >
 > Create one branch/worktree and one PR per task. Read the task card, its component design, PRD and canonical contracts. Edit only its owned paths plus `orchestration/results/TASK_ID.json`. Never edit shared queue/state, sibling results, protected schemas/locks/registries, or another task's files. Do not provision services, deploy, reveal secrets, or fabricate live evidence. Report missing prerequisites as blocked.
 >

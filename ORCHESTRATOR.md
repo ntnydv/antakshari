@@ -2,6 +2,22 @@
 
 The user has appointed Codex to coordinate OpenCode's implementation work in `ntnydv/antakshari`. OpenCode pulls up to five assigned tasks every30minutes. This document defines coordination; it does not imply that an external OpenCode runner has been connected or started.
 
+The user subsequently authorized both OpenCode and a continuous Codex agent swarm,
+with the orchestrator auditing all work and prompts and correcting course. The
+five-task ceiling applies across both runtimes. Per-task `worker` in state is the
+ownership authority; the queue mirrors it in `task_workers`. Change ownership only
+after a verified handoff or confirmed terminal worker, preserving partial files
+and the original implementation baseline. Check actual process/agent handles;
+an expired lease or observation timeout alone does not prove that work stopped.
+
+At each handoff, audit the worker prompt against the task card and current user
+instructions. Name owned paths, dependencies, test requirements, evidence format,
+and prohibited scope. Audit output for contract drift, fake success, fabricated
+live validation, unsupported models and implementation of another task's feature.
+Record corrections in task-scoped evidence or the orchestration audit log. A
+passing test suite does not excuse a scope violation. Re-run affected checks on
+the corrected commit before accepting or merging it.
+
 ## Sources of truth
 
 1. User's latest instructions.

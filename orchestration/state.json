@@ -1,41 +1,66 @@
 {
   "schema_version": 1,
-  "revision": 2,
+  "revision": 3,
   "tasks": {
     "BOOT-001": {
       "status": "dispatched",
       "attempts": 1,
       "batch_id": "batch-0001",
       "dispatched_at": "2026-10-28T04:09:14.884202Z",
-      "lease_expires_at": "2026-10-28T06:09:14.884202Z"
+      "lease_expires_at": "2026-10-30T01:49:21.222Z",
+      "worker": "opencode",
+      "prior_lease_expires_at": "2026-10-28T06:09:14.884202Z",
+      "assignment_reviewed_at": "2026-10-29T23:49:21.222Z",
+      "assignment_review_reason": "Human authorized mixed runtimes; prior OpenCode run interrupted, transferred worktrees verified clean, Codex agents confirmed running. Existing baseline and task scope preserved.",
+      "audit_status": "changes_requested"
     },
     "BOOT-002": {
-      "status": "dispatched",
+      "status": "in_progress",
       "attempts": 1,
       "batch_id": "batch-0001",
       "dispatched_at": "2026-10-28T04:09:14.884202Z",
-      "lease_expires_at": "2026-10-28T06:09:14.884202Z"
+      "lease_expires_at": "2026-10-30T01:49:21.222Z",
+      "worker": "codex/product_architecture",
+      "prior_lease_expires_at": "2026-10-28T06:09:14.884202Z",
+      "assignment_reviewed_at": "2026-10-29T23:49:21.222Z",
+      "assignment_review_reason": "Human authorized mixed runtimes; prior OpenCode run interrupted, transferred worktrees verified clean, Codex agents confirmed running. Existing baseline and task scope preserved.",
+      "audit_status": "pending_verification"
     },
     "BOOT-003": {
       "status": "dispatched",
       "attempts": 1,
       "batch_id": "batch-0001",
       "dispatched_at": "2026-10-28T04:09:14.884202Z",
-      "lease_expires_at": "2026-10-28T06:09:14.884202Z"
+      "lease_expires_at": "2026-10-30T01:49:21.222Z",
+      "worker": "opencode",
+      "prior_lease_expires_at": "2026-10-28T06:09:14.884202Z",
+      "assignment_reviewed_at": "2026-10-29T23:49:21.222Z",
+      "assignment_review_reason": "Human authorized mixed runtimes; prior OpenCode run interrupted, transferred worktrees verified clean, Codex agents confirmed running. Existing baseline and task scope preserved.",
+      "audit_status": "pending_verification"
     },
     "BOOT-004": {
-      "status": "dispatched",
+      "status": "in_progress",
       "attempts": 1,
       "batch_id": "batch-0001",
       "dispatched_at": "2026-10-28T04:09:14.884202Z",
-      "lease_expires_at": "2026-10-28T06:09:14.884202Z"
+      "lease_expires_at": "2026-10-30T01:49:21.222Z",
+      "worker": "codex/muse_design",
+      "prior_lease_expires_at": "2026-10-28T06:09:14.884202Z",
+      "assignment_reviewed_at": "2026-10-29T23:49:21.222Z",
+      "assignment_review_reason": "Human authorized mixed runtimes; prior OpenCode run interrupted, transferred worktrees verified clean, Codex agents confirmed running. Existing baseline and task scope preserved.",
+      "audit_status": "pending_verification"
     },
     "BOOT-005": {
-      "status": "dispatched",
+      "status": "in_progress",
       "attempts": 1,
       "batch_id": "batch-0001",
       "dispatched_at": "2026-10-28T04:09:14.884202Z",
-      "lease_expires_at": "2026-10-28T06:09:14.884202Z"
+      "lease_expires_at": "2026-10-30T01:49:21.222Z",
+      "worker": "codex/multiplayer_rounds",
+      "prior_lease_expires_at": "2026-10-28T06:09:14.884202Z",
+      "assignment_reviewed_at": "2026-10-29T23:49:21.222Z",
+      "assignment_review_reason": "Human authorized mixed runtimes; prior OpenCode run interrupted, transferred worktrees verified clean, Codex agents confirmed running. Existing baseline and task scope preserved.",
+      "audit_status": "pending_verification"
     },
     "BOOT-006": {
       "status": "pending",

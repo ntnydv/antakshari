@@ -2,14 +2,14 @@
   "schema_version": 1,
   "batch_id": "batch-0001",
   "status": "dispatched",
-  "worker": "opencode",
+  "worker": "mixed",
   "max_concurrency": 5,
   "cadence_minutes": 30,
   "baseline_ref": "main",
   "baseline_sha": "eac8a4b3d47c1b1f1483aba2c62094c2abb6cbfb",
   "created_at": "2026-10-28T04:09:14.884202Z",
-  "lease_expires_at": "2026-10-28T06:09:14.884202Z",
-  "instructions": "Branch each task from the pinned baseline_sha. OpenCode submits one scoped PR and result artifact per task. Workers never change shared queue/state.",
+  "lease_expires_at": "2026-10-30T01:49:21.222Z",
+  "instructions": "Use task_workers and the worker field in state for exclusive ownership. OpenCode owns BOOT-001/003; Codex agents own BOOT-002/004/005. Continue from existing task branches at the original baseline. No new task claims. Orchestrator verifies, merges and marks done.",
   "task_ids": [
     "BOOT-001",
     "BOOT-002",
@@ -23,5 +23,14 @@
     "backlog/tasks/BOOT/BOOT-003.md",
     "backlog/tasks/BOOT/BOOT-004.md",
     "backlog/tasks/BOOT/BOOT-005.md"
-  ]
+  ],
+  "task_workers": {
+    "BOOT-001": "opencode",
+    "BOOT-002": "codex/product_architecture",
+    "BOOT-003": "opencode",
+    "BOOT-004": "codex/muse_design",
+    "BOOT-005": "codex/multiplayer_rounds"
+  },
+  "prior_lease_expires_at": "2026-10-28T06:09:14.884202Z",
+  "assignment_reviewed_at": "2026-10-29T23:49:21.222Z"
 }
