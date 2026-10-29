@@ -1,0 +1,17 @@
+{
+  "task_id": "BOOT-004",
+  "verified": true,
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "tools/contracts/check.py"
+      ],
+      "cwd": "/Users/nitin/Documents/ChatGPT/Antakshari/.opencode-worktrees/antakshari-BOOT-004",
+      "returncode": 0,
+      "stdout": "Node v22.18.0; generated artifact check: 5 files\nTypeScript strict compilation: passed\nAJV draft 2020-12, 17 schemas, 156 TypeScript cases: passed\nDart SDK version: 3.13.7 (stable) (Thu Oct 22 14:28:57 2026 -0700) on \"macos_arm64\"\nDart static analysis: passed\nDart/TypeScript exact fixture parity: 156 cases passed (73 valid, 83 invalid)\nPASS: BOOT-004 contracts, schema validation, bindings, ports and fixture checks\n",
+      "stderr": ""
+    }
+  ],
+  "note": "Local verification only; task status is unchanged."
+}

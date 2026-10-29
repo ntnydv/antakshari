@@ -1,0 +1,6 @@
+Expected missing-tool failure observed; enclosing assertion passed.
+Exit: 2
+Node v22.18.0; generated artifact check: 5 files
+TypeScript strict compilation: passed
+AJV draft 2020-12, 17 schemas, 156 TypeScript cases: passed
+BLOCKED: could not execute /definitely-missing-antakshari-dart: spawnSync /definitely-missing-antakshari-dart ENOENT

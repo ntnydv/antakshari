@@ -1,0 +1,6 @@
+Local verified implementation: 5f541d40f9384783dc8b9b6172b3eb516239f233
+Published implementation: c7dc1d956baf91f9289c45a3565a7029e750b47f
+Both implementation trees: 351dc9a9a948d06009c38825a62cedf48237b1d9
+Publication used connected GitHub API because local Git had no credentials.
+Original evidence retains the original locally tested SHA. No test result was reattributed.
+Orchestrator independently reran pinned taskctl verify: exit 0; 17 schemas, 156 parity cases, Dart analysis and TS compile passed.
