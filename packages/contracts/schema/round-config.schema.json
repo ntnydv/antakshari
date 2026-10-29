@@ -1,0 +1,404 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:round-config:v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R01"
+        },
+        "kind": {
+          "const": "classic_chain"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 20000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "startSoundPolicy": {
+          "const": "curated_phoneme"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "startSoundPolicy"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R02"
+        },
+        "kind": {
+          "const": "dhun_pehchano"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 8000
+        },
+        "recordingLimitMs": {
+          "const": 15000
+        },
+        "cueDurationMs": {
+          "type": "integer",
+          "minimum": 3000,
+          "maximum": 7000
+        },
+        "ownership": {
+          "type": "string",
+          "enum": [
+            "assigned",
+            "buzzer"
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "cueDurationMs",
+        "ownership"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R03"
+        },
+        "kind": {
+          "const": "antara_to_mukhda"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 15000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "requiredSection": {
+          "const": "mukhda"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "requiredSection"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R04"
+        },
+        "kind": {
+          "const": "mukhda_to_antara"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 20000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "requiredSection": {
+          "const": "any_approved_antara"
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "requiredSection"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R05"
+        },
+        "kind": {
+          "const": "agla_bol"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 10000
+        },
+        "recordingLimitMs": {
+          "const": 15000
+        },
+        "replayLimit": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "replayLimit"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R06"
+        },
+        "kind": {
+          "const": "shabd_se_geet"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 15000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "keywordPlan": {
+          "type": "string",
+          "enum": [
+            "shared_word",
+            "paired_words"
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "keywordPlan"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R07"
+        },
+        "kind": {
+          "const": "hum_and_guess"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 10000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "requiredMode": {
+          "const": "2v2"
+        },
+        "readyWindowMs": {
+          "const": 10000
+        },
+        "humWindowMs": {
+          "const": 20000
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "requiredMode",
+        "readyWindowMs",
+        "humWindowMs"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R08"
+        },
+        "kind": {
+          "const": "two_song_fragments"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 15000
+        },
+        "recordingLimitMs": {
+          "const": 0
+        },
+        "fragmentDurationMs": {
+          "const": 4000
+        },
+        "gapMs": {
+          "const": 500
+        },
+        "answerSlots": {
+          "const": 2
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "fragmentDurationMs",
+        "gapMs",
+        "answerSlots"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R09"
+        },
+        "kind": {
+          "const": "silent_video"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 12000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "silentDerivativeRequired": {
+          "const": true
+        },
+        "ownership": {
+          "type": "string",
+          "enum": [
+            "assigned",
+            "buzzer"
+          ]
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "silentDerivativeRequired",
+        "ownership"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "roundId": {
+          "const": "R10"
+        },
+        "kind": {
+          "const": "picture_clue"
+        },
+        "primaryOpportunities": {
+          "const": 4
+        },
+        "answerWindowMs": {
+          "const": 15000
+        },
+        "recordingLimitMs": {
+          "const": 20000
+        },
+        "maxRevealHints": {
+          "const": 1
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "roundId",
+        "kind",
+        "primaryOpportunities",
+        "answerWindowMs",
+        "recordingLimitMs",
+        "maxRevealHints"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

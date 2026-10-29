@@ -45,23 +45,37 @@
       "pattern": "^[A-Za-z0-9_-]{1,128}$"
     },
     "roundId": {
-      "type": "string",
-      "enum": [
-        "R01",
-        "R02",
-        "R03",
-        "R04",
-        "R05",
-        "R06",
-        "R07",
-        "R08",
-        "R09",
-        "R10"
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "R01",
+            "R02",
+            "R03",
+            "R04",
+            "R05",
+            "R06",
+            "R07",
+            "R08",
+            "R09",
+            "R10"
+          ]
+        },
+        {
+          "type": "null"
+        }
       ]
     },
     "roundInstanceId": {
-      "type": "string",
-      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
     },
     "promptId": {
       "anyOf": [
@@ -153,5 +167,106 @@
     "rulesVersion",
     "resultStatus"
   ],
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "roundId": {
+              "type": "null"
+            },
+            "roundInstanceId": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "roundId",
+            "roundInstanceId"
+          ],
+          "additionalProperties": true
+        },
+        {
+          "type": "object",
+          "properties": {
+            "roundId": {
+              "type": "string",
+              "enum": [
+                "R01",
+                "R02",
+                "R03",
+                "R04",
+                "R05",
+                "R06",
+                "R07",
+                "R08",
+                "R09",
+                "R10"
+              ]
+            },
+            "roundInstanceId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,128}$"
+            }
+          },
+          "required": [
+            "roundId",
+            "roundInstanceId"
+          ],
+          "additionalProperties": true
+        }
+      ]
+    },
+    {
+      "if": {
+        "type": "object",
+        "properties": {
+          "phase": {
+            "not": {
+              "type": "string",
+              "enum": [
+                "lobby",
+                "preparing",
+                "countdown",
+                "finished",
+                "abandoned"
+              ]
+            }
+          }
+        },
+        "required": [
+          "phase"
+        ]
+      },
+      "then": {
+        "type": "object",
+        "properties": {
+          "roundId": {
+            "type": "string",
+            "enum": [
+              "R01",
+              "R02",
+              "R03",
+              "R04",
+              "R05",
+              "R06",
+              "R07",
+              "R08",
+              "R09",
+              "R10"
+            ]
+          },
+          "roundInstanceId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,128}$"
+          }
+        },
+        "required": [
+          "roundId",
+          "roundInstanceId"
+        ]
+      }
+    }
+  ]
 }

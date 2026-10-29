@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:room-projection:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "roomId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "1v1",
+        "2v2"
+      ]
+    },
+    "settingsVersion": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "ownerUid": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "packId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "preset": {
+      "type": "string",
+      "enum": [
+        "standard6",
+        "marathon10"
+      ]
+    },
+    "partyReview": {
+      "type": "boolean"
+    },
+    "activeMatchId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "lobby",
+        "starting",
+        "in_match",
+        "closed"
+      ]
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,128}$"
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 40
+          },
+          "presetAvatarId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,128}$"
+          },
+          "teamId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "A",
+                  "B"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "seat": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "readyVersion": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "micReady": {
+            "type": "boolean"
+          },
+          "mediaReady": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "uid",
+          "displayName",
+          "presetAvatarId",
+          "teamId",
+          "seat",
+          "ready",
+          "readyVersion",
+          "micReady",
+          "mediaReady"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 4
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "roomId",
+    "version",
+    "mode",
+    "settingsVersion",
+    "ownerUid",
+    "packId",
+    "preset",
+    "partyReview",
+    "activeMatchId",
+    "status",
+    "members"
+  ],
+  "additionalProperties": false
+}
