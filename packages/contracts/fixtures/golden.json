@@ -1,0 +1,3269 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "id": "command-room.create",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": null,
+        "matchId": null,
+        "expectedVersion": null,
+        "type": "room.create",
+        "payload": {
+          "mode": "2v2",
+          "packId": "fixture",
+          "preset": "marathon10",
+          "partyReview": true
+        }
+      }
+    },
+    {
+      "id": "command-room.join",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": null,
+        "matchId": null,
+        "expectedVersion": null,
+        "type": "room.join",
+        "payload": {
+          "inviteCode": "ABC234"
+        }
+      }
+    },
+    {
+      "id": "command-room.leave",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "room.leave",
+        "payload": {}
+      }
+    },
+    {
+      "id": "command-room.settings.update",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "room.settings.update",
+        "payload": {
+          "packId": "fixture",
+          "preset": "standard6",
+          "partyReview": false
+        }
+      }
+    },
+    {
+      "id": "command-room.team.select",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "room.team.select",
+        "payload": {
+          "teamId": "A"
+        }
+      }
+    },
+    {
+      "id": "command-room.ready",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "room.ready",
+        "payload": {
+          "ready": true,
+          "settingsVersion": 1,
+          "micReady": true,
+          "mediaReady": true
+        }
+      }
+    },
+    {
+      "id": "command-match.start",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": null,
+        "expectedVersion": 17,
+        "type": "match.start",
+        "payload": {}
+      }
+    },
+    {
+      "id": "command-cue.ready",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "cue.ready",
+        "payload": {
+          "promptId": "fixture",
+          "phaseToken": "fixture",
+          "assetHashes": [
+            "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          ]
+        }
+      }
+    },
+    {
+      "id": "command-answer.request",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-answer.buzz",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.buzz",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-answer.submit",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.submit",
+        "payload": {
+          "attemptId": "fixture",
+          "grantGeneration": 1,
+          "audioObjectId": null,
+          "audioSha256": null,
+          "titleAnswers": [
+            "चाँद की कल्पना 🎵",
+            "Kalpana"
+          ]
+        }
+      }
+    },
+    {
+      "id": "command-hint.request",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "hint.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-review.request",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "review.request",
+        "payload": {
+          "attemptId": "fixture",
+          "reason": "valid_variant"
+        }
+      }
+    },
+    {
+      "id": "command-review.vote",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "review.vote",
+        "payload": {
+          "reviewId": "fixture",
+          "resolution": "void"
+        }
+      }
+    },
+    {
+      "id": "command-match.resume",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "match.resume",
+        "payload": {
+          "lastSeq": 4
+        }
+      }
+    },
+    {
+      "id": "command-match.rematch",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "match.rematch",
+        "payload": {
+          "ready": true
+        }
+      }
+    },
+    {
+      "id": "command-missing-id",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-forged-actor",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        },
+        "uid": "attacker"
+      }
+    },
+    {
+      "id": "command-forged-points",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17",
+          "score": 100
+        }
+      }
+    },
+    {
+      "id": "command-new-major",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 2,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-string-major",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": "1",
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-unknown-type",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "score.award",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-invalid-uuid",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "notuuid",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-nested-path",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room/private",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-null-match",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": null,
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-null-room",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": null,
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-null-version",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": null,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-fractional-version",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 1.5,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-unsafe-version",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 9007199254740992,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "command-bool-version",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": true,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "snapshot-lobby",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "lobby",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": null,
+        "activeUid": null,
+        "deadlineMs": null,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-preparing",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "preparing",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": null,
+        "activeUid": null,
+        "deadlineMs": null,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-countdown",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "countdown",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": null,
+        "activeUid": null,
+        "deadlineMs": null,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-round_intro",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "round_intro",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-round_intro",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "round_intro",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-cue",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "cue",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-cue",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "cue",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-answer_open",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "answer_open",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-answer_open",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "answer_open",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-recording",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "recording",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-recording",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "recording",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-adjudicating",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "adjudicating",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-adjudicating",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "adjudicating",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-reveal",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "reveal",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-reveal",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "reveal",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-round_summary",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "round_summary",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-round_summary",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "round_summary",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-finished",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "finished",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": null,
+        "activeUid": null,
+        "deadlineMs": null,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-paused",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "paused",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-null-round-paused",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "paused",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-abandoned",
+      "schema": "snapshot",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "abandoned",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": null,
+        "activeUid": null,
+        "deadlineMs": null,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-half-null-round",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "recording",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-negative-time",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "recording",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": -1,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-fractional-time",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "recording",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1.1,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress"
+      }
+    },
+    {
+      "id": "snapshot-answer-leak",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "recording",
+        "phaseToken": "fixture",
+        "roundId": "R04",
+        "roundInstanceId": "fixture",
+        "promptId": "fixture",
+        "activeUid": "fixture",
+        "deadlineMs": 1793145620000,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress",
+        "expectedSongId": "fixture"
+      }
+    },
+    {
+      "id": "room-unicode",
+      "schema": "room-projection",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "version": 1,
+        "mode": "2v2",
+        "settingsVersion": 1,
+        "ownerUid": "fixture",
+        "packId": "fixture",
+        "preset": "marathon10",
+        "partyReview": true,
+        "activeMatchId": null,
+        "status": "lobby",
+        "members": [
+          {
+            "uid": "fixture",
+            "displayName": "आशा 🎶",
+            "presetAvatarId": "fixture",
+            "teamId": "A",
+            "seat": 0,
+            "ready": false,
+            "readyVersion": null,
+            "micReady": false,
+            "mediaReady": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "room-duplicate-seat",
+      "schema": "room-projection",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "version": 1,
+        "mode": "2v2",
+        "settingsVersion": 1,
+        "ownerUid": "fixture",
+        "packId": "fixture",
+        "preset": "marathon10",
+        "partyReview": true,
+        "activeMatchId": null,
+        "status": "lobby",
+        "members": [
+          {
+            "uid": "fixture",
+            "displayName": "आशा 🎶",
+            "presetAvatarId": "fixture",
+            "teamId": "A",
+            "seat": 0,
+            "ready": false,
+            "readyVersion": null,
+            "micReady": false,
+            "mediaReady": true
+          },
+          {
+            "uid": "second",
+            "displayName": "आशा 🎶",
+            "presetAvatarId": "fixture",
+            "teamId": "A",
+            "seat": 0,
+            "ready": false,
+            "readyVersion": null,
+            "micReady": false,
+            "mediaReady": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "room-invalid-marathon",
+      "schema": "room-projection",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "version": 1,
+        "mode": "1v1",
+        "settingsVersion": 1,
+        "ownerUid": "fixture",
+        "packId": "fixture",
+        "preset": "marathon10",
+        "partyReview": true,
+        "activeMatchId": null,
+        "status": "lobby",
+        "members": [
+          {
+            "uid": "fixture",
+            "displayName": "आशा 🎶",
+            "presetAvatarId": "fixture",
+            "teamId": "A",
+            "seat": 0,
+            "ready": false,
+            "readyVersion": null,
+            "micReady": false,
+            "mediaReady": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "cue-signed-placeholder",
+      "schema": "safe-cue",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://example.invalid/assets/opaque",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "cue-unresolved",
+      "schema": "safe-cue",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": null,
+            "expiresAtMs": null
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "cue-insecure-url",
+      "schema": "safe-cue",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "http://example.invalid",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "cue-hidden-title",
+      "schema": "safe-cue",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://example.invalid/assets/opaque",
+            "expiresAtMs": 1793145610000,
+            "songTitle": "private"
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "private-hummer",
+      "schema": "private-role-view",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "recipientUid": "fixture",
+        "expiryMs": 1793145620000,
+        "role": "hummer",
+        "songId": "fixture",
+        "displayTitle": "Original fixture song"
+      }
+    },
+    {
+      "id": "private-wrong-role",
+      "schema": "private-role-view",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "recipientUid": "fixture",
+        "expiryMs": 1793145620000,
+        "role": "opponent",
+        "songId": "fixture",
+        "displayTitle": "Original fixture song"
+      }
+    },
+    {
+      "id": "grant-capture",
+      "schema": "recording-grant",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "uid": "fixture",
+        "matchId": "fixture",
+        "promptId": "fixture",
+        "generation": 1,
+        "expiresAtMs": 1793145620000,
+        "maxBytes": 960000,
+        "sampleRate": 24000,
+        "direction": "capture"
+      }
+    },
+    {
+      "id": "grant-too-large",
+      "schema": "recording-grant",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "uid": "fixture",
+        "matchId": "fixture",
+        "promptId": "fixture",
+        "generation": 1,
+        "expiresAtMs": 1793145620000,
+        "maxBytes": 5000000,
+        "sampleRate": 24000,
+        "direction": "capture"
+      }
+    },
+    {
+      "id": "grant-wrong-rate",
+      "schema": "recording-grant",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "uid": "fixture",
+        "matchId": "fixture",
+        "promptId": "fixture",
+        "generation": 1,
+        "expiresAtMs": 1793145620000,
+        "maxBytes": 960000,
+        "sampleRate": 48000,
+        "direction": "capture"
+      }
+    },
+    {
+      "id": "transcript-final",
+      "schema": "transcript-evidence",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK"
+      }
+    },
+    {
+      "id": "transcript-partial",
+      "schema": "transcript-evidence",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": false,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK"
+      }
+    },
+    {
+      "id": "transcript-optional-language",
+      "schema": "transcript-evidence",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK",
+        "language": "hi",
+        "captureTiming": {
+          "origin": "application_capture",
+          "startAtMs": 1793145600000,
+          "endAtMs": 1793145601800
+        }
+      }
+    },
+    {
+      "id": "transcript-continuous-turn",
+      "schema": "transcript-evidence",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "CONTINUOUS",
+        "turns": [
+          {
+            "text": "मौलिक",
+            "language": "hi"
+          }
+        ]
+      }
+    },
+    {
+      "id": "transcript-no-confidence",
+      "schema": "transcript-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK",
+        "confidence": 1
+      }
+    },
+    {
+      "id": "transcript-no-timestamps",
+      "schema": "transcript-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK",
+        "wordTimestamps": []
+      }
+    },
+    {
+      "id": "transcript-no-ptt-turns",
+      "schema": "transcript-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK",
+        "turns": []
+      }
+    },
+    {
+      "id": "transcript-backward-capture",
+      "schema": "transcript-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK",
+        "captureTiming": {
+          "origin": "application_capture",
+          "startAtMs": 2,
+          "endAtMs": 1
+        }
+      }
+    },
+    {
+      "id": "model-match",
+      "schema": "model-evidence",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "candidateId": "fixture",
+        "sectionId": null,
+        "relation": "MATCH",
+        "matchedSpanIds": [
+          "span_1"
+        ],
+        "contradictionCodes": [],
+        "insufficientEvidence": false
+      }
+    },
+    {
+      "id": "model-insufficient",
+      "schema": "model-evidence",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "candidateId": null,
+        "sectionId": null,
+        "relation": "INSUFFICIENT",
+        "matchedSpanIds": [],
+        "contradictionCodes": [],
+        "insufficientEvidence": true
+      }
+    },
+    {
+      "id": "model-false-certainty",
+      "schema": "model-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "candidateId": null,
+        "sectionId": null,
+        "relation": "MATCH",
+        "matchedSpanIds": [
+          "span_1"
+        ],
+        "contradictionCodes": [],
+        "insufficientEvidence": false
+      }
+    },
+    {
+      "id": "model-unbounded-points",
+      "schema": "model-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "candidateId": "fixture",
+        "sectionId": null,
+        "relation": "MATCH",
+        "matchedSpanIds": [
+          "span_1"
+        ],
+        "contradictionCodes": [],
+        "insufficientEvidence": false,
+        "points": 20
+      }
+    },
+    {
+      "id": "attempt-sealed",
+      "schema": "attempt",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "generation": 1,
+        "actor": {
+          "uid": "fixture",
+          "teamId": "A"
+        },
+        "mediaDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "phase": "sealed",
+        "sealedAtMs": 1793145600000,
+        "decisionRef": null
+      }
+    },
+    {
+      "id": "attempt-malformed-digest",
+      "schema": "attempt",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "generation": 1,
+        "actor": {
+          "uid": "fixture",
+          "teamId": "A"
+        },
+        "mediaDigest": "short",
+        "phase": "sealed",
+        "sealedAtMs": 1793145600000,
+        "decisionRef": null
+      }
+    },
+    {
+      "id": "verdict-accepted",
+      "schema": "adjudication",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "accepted",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000
+      }
+    },
+    {
+      "id": "verdict-rejected",
+      "schema": "adjudication",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "rejected",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000
+      }
+    },
+    {
+      "id": "verdict-uncertain",
+      "schema": "adjudication",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "uncertain",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000
+      }
+    },
+    {
+      "id": "verdict-invalid_attempt",
+      "schema": "adjudication",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "invalid_attempt",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000
+      }
+    },
+    {
+      "id": "verdict-cancelled",
+      "schema": "adjudication",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "cancelled",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000
+      }
+    },
+    {
+      "id": "verdict-internal-relation",
+      "schema": "adjudication",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "MATCH",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000
+      }
+    },
+    {
+      "id": "verdict-score-injection",
+      "schema": "adjudication",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "uncertain",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000,
+        "points": 20
+      }
+    },
+    {
+      "id": "score-capped",
+      "schema": "score-entry",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "entryId": "fixture",
+        "attemptId": "fixture",
+        "teamId": "A",
+        "category": "singing",
+        "requestedDelta": 20,
+        "appliedDelta": 10,
+        "capEffect": "ceiling",
+        "reasonCode": "VALID",
+        "correctionOf": null,
+        "rulesVersion": "fixture"
+      }
+    },
+    {
+      "id": "score-wrong-team",
+      "schema": "score-entry",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "entryId": "fixture",
+        "attemptId": "fixture",
+        "teamId": "C",
+        "category": "singing",
+        "requestedDelta": 20,
+        "appliedDelta": 10,
+        "capEffect": "ceiling",
+        "reasonCode": "VALID",
+        "correctionOf": null,
+        "rulesVersion": "fixture"
+      }
+    },
+    {
+      "id": "safe-reveal",
+      "schema": "safe-reveal",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R04",
+        "songs": [
+          {
+            "songId": "fixture",
+            "displayTitle": "Original fixture song",
+            "sectionLabel": "antara"
+          }
+        ],
+        "explanationKey": "accepted_antara"
+      }
+    },
+    {
+      "id": "reveal-raw-lyrics",
+      "schema": "safe-reveal",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R04",
+        "songs": [
+          {
+            "songId": "fixture",
+            "displayTitle": "Original fixture song",
+            "sectionLabel": "antara"
+          }
+        ],
+        "explanationKey": "accepted_antara",
+        "lyrics": "private"
+      }
+    },
+    {
+      "id": "error-retry",
+      "schema": "error",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "code": "TEMPORARILY_UNAVAILABLE",
+        "messageKey": "service_unavailable",
+        "retryable": true,
+        "retryAfterMs": 1000,
+        "currentVersion": 17,
+        "requestId": "fixture"
+      }
+    },
+    {
+      "id": "error-provider-body",
+      "schema": "error",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "code": "TEMPORARILY_UNAVAILABLE",
+        "messageKey": "service_unavailable",
+        "retryable": true,
+        "retryAfterMs": 1000,
+        "currentVersion": 17,
+        "requestId": "fixture",
+        "providerBody": "not-safe"
+      }
+    },
+    {
+      "id": "receipt-applied",
+      "schema": "command-receipt",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "requestDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "status": "applied",
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "snapshotRef": "fixture",
+        "grantRef": null,
+        "error": null,
+        "createdAtMs": 1793145600000,
+        "expiresAtMs": 1793145610000
+      }
+    },
+    {
+      "id": "receipt-rejected",
+      "schema": "command-receipt",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "requestDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "status": "rejected",
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "snapshotRef": "fixture",
+        "grantRef": null,
+        "error": {
+          "schemaVersion": 1,
+          "code": "TEMPORARILY_UNAVAILABLE",
+          "messageKey": "service_unavailable",
+          "retryable": true,
+          "retryAfterMs": 1000,
+          "currentVersion": 17,
+          "requestId": "fixture"
+        },
+        "createdAtMs": 1793145600000,
+        "expiresAtMs": 1793145610000
+      }
+    },
+    {
+      "id": "receipt-unexplained-rejection",
+      "schema": "command-receipt",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "requestDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "status": "rejected",
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "snapshotRef": "fixture",
+        "grantRef": null,
+        "error": null,
+        "createdAtMs": 1793145600000,
+        "expiresAtMs": 1793145610000
+      }
+    },
+    {
+      "id": "config-R01",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R01",
+        "kind": "classic_chain",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 20000,
+        "recordingLimitMs": 20000,
+        "startSoundPolicy": "curated_phoneme"
+      }
+    },
+    {
+      "id": "config-wrong-shape-R01",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R01",
+        "kind": "classic_chain",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 20000,
+        "recordingLimitMs": 20000,
+        "startSoundPolicy": "curated_phoneme",
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R02",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R02",
+        "kind": "dhun_pehchano",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 8000,
+        "recordingLimitMs": 15000,
+        "cueDurationMs": 5000,
+        "ownership": "assigned"
+      }
+    },
+    {
+      "id": "config-wrong-shape-R02",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R02",
+        "kind": "dhun_pehchano",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 8000,
+        "recordingLimitMs": 15000,
+        "cueDurationMs": 5000,
+        "ownership": "assigned",
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R03",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R03",
+        "kind": "antara_to_mukhda",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 20000,
+        "requiredSection": "mukhda"
+      }
+    },
+    {
+      "id": "config-wrong-shape-R03",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R03",
+        "kind": "antara_to_mukhda",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 20000,
+        "requiredSection": "mukhda",
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R04",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R04",
+        "kind": "mukhda_to_antara",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 20000,
+        "recordingLimitMs": 20000,
+        "requiredSection": "any_approved_antara"
+      }
+    },
+    {
+      "id": "config-wrong-shape-R04",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R04",
+        "kind": "mukhda_to_antara",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 20000,
+        "recordingLimitMs": 20000,
+        "requiredSection": "any_approved_antara",
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R05",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R05",
+        "kind": "agla_bol",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 10000,
+        "recordingLimitMs": 15000,
+        "replayLimit": 1
+      }
+    },
+    {
+      "id": "config-wrong-shape-R05",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R05",
+        "kind": "agla_bol",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 10000,
+        "recordingLimitMs": 15000,
+        "replayLimit": 1,
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R06",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R06",
+        "kind": "shabd_se_geet",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 20000,
+        "keywordPlan": "shared_word"
+      }
+    },
+    {
+      "id": "config-wrong-shape-R06",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R06",
+        "kind": "shabd_se_geet",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 20000,
+        "keywordPlan": "shared_word",
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R07",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R07",
+        "kind": "hum_and_guess",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 10000,
+        "recordingLimitMs": 20000,
+        "requiredMode": "2v2",
+        "readyWindowMs": 10000,
+        "humWindowMs": 20000
+      }
+    },
+    {
+      "id": "config-wrong-shape-R07",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R07",
+        "kind": "hum_and_guess",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 10000,
+        "recordingLimitMs": 20000,
+        "requiredMode": "2v2",
+        "readyWindowMs": 10000,
+        "humWindowMs": 20000,
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R08",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R08",
+        "kind": "two_song_fragments",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 0,
+        "fragmentDurationMs": 4000,
+        "gapMs": 500,
+        "answerSlots": 2
+      }
+    },
+    {
+      "id": "config-wrong-shape-R08",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R08",
+        "kind": "two_song_fragments",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 0,
+        "fragmentDurationMs": 4000,
+        "gapMs": 500,
+        "answerSlots": 2,
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R09",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R09",
+        "kind": "silent_video",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 12000,
+        "recordingLimitMs": 20000,
+        "silentDerivativeRequired": true,
+        "ownership": "assigned"
+      }
+    },
+    {
+      "id": "config-wrong-shape-R09",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R09",
+        "kind": "silent_video",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 12000,
+        "recordingLimitMs": 20000,
+        "silentDerivativeRequired": true,
+        "ownership": "assigned",
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "config-R10",
+      "schema": "round-config",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R10",
+        "kind": "picture_clue",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 20000,
+        "maxRevealHints": 1
+      }
+    },
+    {
+      "id": "config-wrong-shape-R10",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R10",
+        "kind": "picture_clue",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 15000,
+        "recordingLimitMs": 20000,
+        "maxRevealHints": 1,
+        "spokenAnswer": "forbidden"
+      }
+    },
+    {
+      "id": "event-snapshot.updated",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        }
+      }
+    },
+    {
+      "id": "event-cue.started",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "cue.started",
+        "payload": {
+          "schemaVersion": 1,
+          "promptId": "fixture",
+          "roundId": "R09",
+          "assets": [
+            {
+              "assetId": "fixture",
+              "url": "https://example.invalid/assets/opaque",
+              "expiresAtMs": 1793145610000
+            }
+          ],
+          "cueStartAtMs": 1793145600000,
+          "allowedReplays": 1,
+          "instructionKey": "identify_silent_video"
+        }
+      }
+    },
+    {
+      "id": "event-answer.opened",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "answer.opened",
+        "payload": {
+          "promptId": "fixture",
+          "phaseToken": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000
+        }
+      }
+    },
+    {
+      "id": "event-attempt.changed",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "attempt.changed",
+        "payload": {
+          "attemptId": "fixture",
+          "generation": 1,
+          "status": "capturing"
+        }
+      }
+    },
+    {
+      "id": "event-round.revealed",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "round.revealed",
+        "payload": {
+          "schemaVersion": 1,
+          "promptId": "fixture",
+          "roundId": "R04",
+          "songs": [
+            {
+              "songId": "fixture",
+              "displayTitle": "Original fixture song",
+              "sectionLabel": "antara"
+            }
+          ],
+          "explanationKey": "accepted_antara"
+        }
+      }
+    },
+    {
+      "id": "event-score.changed",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "score.changed",
+        "payload": {
+          "schemaVersion": 1,
+          "entryId": "fixture",
+          "attemptId": "fixture",
+          "teamId": "A",
+          "category": "singing",
+          "requestedDelta": 20,
+          "appliedDelta": 10,
+          "capEffect": "ceiling",
+          "reasonCode": "VALID",
+          "correctionOf": null,
+          "rulesVersion": "fixture"
+        }
+      }
+    },
+    {
+      "id": "event-match.finished",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "match.finished",
+        "payload": {
+          "resultStatus": "verified",
+          "scores": {
+            "A": 40,
+            "B": 20
+          }
+        }
+      }
+    },
+    {
+      "id": "event-additive-safe-metadata",
+      "schema": "domain-event",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "metadata": {
+          "delivery_attempt": 1,
+          "replay": true,
+          "x_metric_resync": 1
+        }
+      }
+    },
+    {
+      "id": "event-private-metadata",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "metadata": {
+          "songId": "fixture"
+        }
+      }
+    },
+    {
+      "id": "event-free-text-metadata",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "metadata": {
+          "x_metric_hint": "private"
+        }
+      }
+    },
+    {
+      "id": "event-unknown-discriminator",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "unknown",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        }
+      }
+    },
+    {
+      "id": "event-forged-top-field",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "answerKey": "fixture"
+      }
+    },
+    {
+      "id": "task-result-blocked",
+      "schema": "task-result",
+      "valid": true,
+      "value": {
+        "schema_version": 1,
+        "task_id": "BOOT-004",
+        "worker": "fixture",
+        "batch_id": "fixture_batch",
+        "status": "blocked",
+        "base_sha": "0000000000000000000000000000000000000000",
+        "implementation_sha": null,
+        "summary": "Synthetic contract fixture only.",
+        "changed_files": [],
+        "checks": [],
+        "blockers": [
+          "Synthetic test only"
+        ],
+        "remaining_risks": [],
+        "provider_mode": "not_used",
+        "evidence_paths": []
+      }
+    },
+    {
+      "id": "task-result-self-approved",
+      "schema": "task-result",
+      "valid": false,
+      "value": {
+        "schema_version": 1,
+        "task_id": "BOOT-004",
+        "worker": "fixture",
+        "batch_id": "fixture_batch",
+        "status": "done",
+        "base_sha": "0000000000000000000000000000000000000000",
+        "implementation_sha": null,
+        "summary": "Synthetic contract fixture only.",
+        "changed_files": [],
+        "checks": [],
+        "blockers": [
+          "Synthetic test only"
+        ],
+        "remaining_risks": [],
+        "provider_mode": "not_used",
+        "evidence_paths": []
+      }
+    },
+    {
+      "id": "unknown-field-command",
+      "schema": "command",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "roomId": null,
+        "matchId": null,
+        "expectedVersion": null,
+        "type": "room.create",
+        "payload": {
+          "mode": "2v2",
+          "packId": "fixture",
+          "preset": "marathon10",
+          "partyReview": true
+        },
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-snapshot",
+      "schema": "snapshot",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "phase": "lobby",
+        "phaseToken": "fixture",
+        "roundId": null,
+        "roundInstanceId": null,
+        "promptId": null,
+        "activeUid": null,
+        "deadlineMs": null,
+        "serverNowMs": 1793145600000,
+        "scores": {
+          "A": 10,
+          "B": -5
+        },
+        "catalogueVersion": "fixture",
+        "rulesVersion": "fixture",
+        "resultStatus": "in_progress",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-room-projection",
+      "schema": "room-projection",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roomId": "fixture",
+        "version": 1,
+        "mode": "2v2",
+        "settingsVersion": 1,
+        "ownerUid": "fixture",
+        "packId": "fixture",
+        "preset": "marathon10",
+        "partyReview": true,
+        "activeMatchId": null,
+        "status": "lobby",
+        "members": [
+          {
+            "uid": "fixture",
+            "displayName": "आशा 🎶",
+            "presetAvatarId": "fixture",
+            "teamId": "A",
+            "seat": 0,
+            "ready": false,
+            "readyVersion": null,
+            "micReady": false,
+            "mediaReady": true
+          }
+        ],
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-safe-cue",
+      "schema": "safe-cue",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://example.invalid/assets/opaque",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-private-role-view",
+      "schema": "private-role-view",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "recipientUid": "fixture",
+        "expiryMs": 1793145620000,
+        "role": "hummer",
+        "songId": "fixture",
+        "displayTitle": "Original fixture song",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-recording-grant",
+      "schema": "recording-grant",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "uid": "fixture",
+        "matchId": "fixture",
+        "promptId": "fixture",
+        "generation": 1,
+        "expiresAtMs": 1793145620000,
+        "maxBytes": 960000,
+        "sampleRate": 24000,
+        "direction": "capture",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-transcript-evidence",
+      "schema": "transcript-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "model": "muse-voice-transcribe-1.0",
+        "text": "यह एक मौलिक परीक्षण है 🎵",
+        "final": true,
+        "observedAudioDurationMs": 1800,
+        "mode": "PUSH_TO_TALK",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-model-evidence",
+      "schema": "model-evidence",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "candidateId": "fixture",
+        "sectionId": null,
+        "relation": "MATCH",
+        "matchedSpanIds": [
+          "span_1"
+        ],
+        "contradictionCodes": [],
+        "insufficientEvidence": false,
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-attempt",
+      "schema": "attempt",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "generation": 1,
+        "actor": {
+          "uid": "fixture",
+          "teamId": "A"
+        },
+        "mediaDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "phase": "sealed",
+        "sealedAtMs": 1793145600000,
+        "decisionRef": null,
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-adjudication",
+      "schema": "adjudication",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "attemptId": "fixture",
+        "grantGeneration": 1,
+        "verdict": "accepted",
+        "reasonCodes": [
+          "NO_FINAL_TRANSCRIPT"
+        ],
+        "songIds": [],
+        "sectionIds": [],
+        "evidenceId": "fixture",
+        "policyVersion": "fixture",
+        "provenance": "DETERMINISTIC_FIXTURE",
+        "settledAtMs": 1793145600000,
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-score-entry",
+      "schema": "score-entry",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "entryId": "fixture",
+        "attemptId": "fixture",
+        "teamId": "A",
+        "category": "singing",
+        "requestedDelta": 20,
+        "appliedDelta": 10,
+        "capEffect": "ceiling",
+        "reasonCode": "VALID",
+        "correctionOf": null,
+        "rulesVersion": "fixture",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-safe-reveal",
+      "schema": "safe-reveal",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R04",
+        "songs": [
+          {
+            "songId": "fixture",
+            "displayTitle": "Original fixture song",
+            "sectionLabel": "antara"
+          }
+        ],
+        "explanationKey": "accepted_antara",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-error",
+      "schema": "error",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "code": "TEMPORARILY_UNAVAILABLE",
+        "messageKey": "service_unavailable",
+        "retryable": true,
+        "retryAfterMs": 1000,
+        "currentVersion": 17,
+        "requestId": "fixture",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-command-receipt",
+      "schema": "command-receipt",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "11111111-1111-4111-8111-111111111111",
+        "requestDigest": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "status": "applied",
+        "roomId": "fixture",
+        "matchId": "fixture",
+        "version": 17,
+        "seq": 8,
+        "snapshotRef": "fixture",
+        "grantRef": null,
+        "error": null,
+        "createdAtMs": 1793145600000,
+        "expiresAtMs": 1793145610000,
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-round-config",
+      "schema": "round-config",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "roundId": "R01",
+        "kind": "classic_chain",
+        "primaryOpportunities": 4,
+        "answerWindowMs": 20000,
+        "recordingLimitMs": 20000,
+        "startSoundPolicy": "curated_phoneme",
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-domain-event",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "unknown-field-task-result",
+      "schema": "task-result",
+      "valid": false,
+      "value": {
+        "schema_version": 1,
+        "task_id": "BOOT-004",
+        "worker": "fixture",
+        "batch_id": "fixture_batch",
+        "status": "blocked",
+        "base_sha": "0000000000000000000000000000000000000000",
+        "implementation_sha": null,
+        "summary": "Synthetic contract fixture only.",
+        "changed_files": [],
+        "checks": [],
+        "blockers": [
+          "Synthetic test only"
+        ],
+        "remaining_risks": [],
+        "provider_mode": "not_used",
+        "evidence_paths": [],
+        "unauthorizedField": true
+      }
+    },
+    {
+      "id": "event-answer-bearing-metric-key",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "metadata": {
+          "x_metric_answer": 10
+        }
+      }
+    },
+    {
+      "id": "event-wrong-metadata-type",
+      "schema": "domain-event",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "eventId": "fixture",
+        "matchId": "fixture",
+        "seq": 9,
+        "version": 18,
+        "occurredAtMs": 1793145600000,
+        "type": "snapshot.updated",
+        "payload": {
+          "schemaVersion": 1,
+          "roomId": "fixture",
+          "matchId": "fixture",
+          "version": 17,
+          "seq": 8,
+          "phase": "recording",
+          "phaseToken": "fixture",
+          "roundId": "R04",
+          "roundInstanceId": "fixture",
+          "promptId": "fixture",
+          "activeUid": "fixture",
+          "deadlineMs": 1793145620000,
+          "serverNowMs": 1793145600000,
+          "scores": {
+            "A": 10,
+            "B": -5
+          },
+          "catalogueVersion": "fixture",
+          "rulesVersion": "fixture",
+          "resultStatus": "in_progress"
+        },
+        "metadata": {
+          "replay": 1
+        }
+      }
+    },
+    {
+      "id": "uuid-urn-uuid-",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "urn:uuid:11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "uuid-URN-UUID-",
+      "schema": "command",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "commandId": "URN:UUID:11111111-1111-4111-8111-111111111111",
+        "roomId": "room_fixture",
+        "matchId": "match_fixture",
+        "expectedVersion": 17,
+        "type": "answer.request",
+        "payload": {
+          "promptId": "prompt_fixture",
+          "phaseToken": "phase_17"
+        }
+      }
+    },
+    {
+      "id": "cue-url-empty-host",
+      "schema": "safe-cue",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "cue-url-bad-percent",
+      "schema": "safe-cue",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://x/%zz",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "cue-url-invalid-port",
+      "schema": "safe-cue",
+      "valid": false,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://x:invalid/a",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    },
+    {
+      "id": "cue-url-encoded-query",
+      "schema": "safe-cue",
+      "valid": true,
+      "value": {
+        "schemaVersion": 1,
+        "promptId": "fixture",
+        "roundId": "R09",
+        "assets": [
+          {
+            "assetId": "fixture",
+            "url": "https://example.invalid/a?x=a%20b",
+            "expiresAtMs": 1793145610000
+          }
+        ],
+        "cueStartAtMs": 1793145600000,
+        "allowedReplays": 1,
+        "instructionKey": "identify_silent_video"
+      }
+    }
+  ]
+}

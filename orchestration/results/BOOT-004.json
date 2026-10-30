@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "task_id": "BOOT-004",
+  "worker": "codex",
+  "batch_id": "batch-0001",
+  "status": "implemented",
+  "base_sha": "eac8a4b3d47c1b1f1483aba2c62094c2abb6cbfb",
+  "implementation_sha": "c7dc1d956baf91f9289c45a3565a7029e750b47f",
+  "summary": "Implemented 17 strict canonical schemas, approved nullable pre-round snapshots, generated immutable TypeScript/Dart bindings, typed shared ports with async transactional reads, reproducible manifests, and 156 golden fixtures. Real AJV/TypeScript and Dart 3.13.7 analysis and exact roundtrip/validity parity pass. The pinned taskctl verification passes; no provider calls or production feature behavior is claimed. Published implementation has an identical Git tree to local verified commit 5f541d40f9384783dc8b9b6172b3eb516239f233; publication mapping is recorded in evidence.",
+  "changed_files": [
+    "packages/contracts/.gitignore",
+    "packages/contracts/README.md",
+    "packages/contracts/dart/lib/antakshari_contracts.dart",
+    "packages/contracts/dart/lib/src/bindings.g.dart",
+    "packages/contracts/dart/lib/src/ports.dart",
+    "packages/contracts/dart/lib/src/runtime.dart",
+    "packages/contracts/dart/lib/src/schemas.g.dart",
+    "packages/contracts/dart/pubspec.yaml",
+    "packages/contracts/dart/test/fixtures.dart",
+    "packages/contracts/fixtures/golden.json",
+    "packages/contracts/manifest.json",
+    "packages/contracts/package-lock.json",
+    "packages/contracts/package.json",
+    "packages/contracts/schema/attempt.schema.json",
+    "packages/contracts/schema/command-receipt.schema.json",
+    "packages/contracts/schema/domain-event.schema.json",
+    "packages/contracts/schema/private-role-view.schema.json",
+    "packages/contracts/schema/recording-grant.schema.json",
+    "packages/contracts/schema/room-projection.schema.json",
+    "packages/contracts/schema/round-config.schema.json",
+    "packages/contracts/schema/safe-cue.schema.json",
+    "packages/contracts/schema/safe-reveal.schema.json",
+    "packages/contracts/schema/score-entry.schema.json",
+    "packages/contracts/schema/snapshot.schema.json",
+    "packages/contracts/schema/transcript-evidence.schema.json",
+    "packages/contracts/src/generated.ts",
+    "packages/contracts/src/index.ts",
+    "packages/contracts/src/ports.ts",
+    "packages/contracts/src/runtime.ts",
+    "packages/contracts/src/schemas.generated.ts",
+    "packages/contracts/test/fixtures.ts",
+    "packages/contracts/tsconfig.json",
+    "tools/contracts/check.mjs",
+    "tools/contracts/check.py",
+    "tools/contracts/generate.mjs",
+    "tools/contracts/evidence/BOOT-004-verify.log",
+    "tools/contracts/evidence/BOOT-004-missing-tool.log",
+    "orchestration/results/BOOT-004.json",
+    "tools/contracts/evidence/BOOT-004-publication.log"
+  ],
+  "checks": [
+    {
+      "command": "python3 tools/taskctl.py verify BOOT-004",
+      "exit_code": 0,
+      "log_path": "tools/contracts/evidence/BOOT-004-verify.log",
+      "environment": "macOS arm64; Node 22.18.0; TypeScript 5.9.3; Dart 3.13.7; Python 3.12"
+    }
+  ],
+  "blockers": [],
+  "remaining_risks": [
+    "Contract validation is not authorization, deadline, idempotency, scoring, provider or device qualification.",
+    "Dart validator supports the declared schema subset; new keywords need reviewed support and parity fixtures.",
+    "New event metadata keys require contract review; unrestricted metadata extensions are intentionally rejected."
+  ],
+  "provider_mode": "not_used",
+  "evidence_paths": [
+    "tools/contracts/evidence/BOOT-004-verify.log",
+    "tools/contracts/evidence/BOOT-004-missing-tool.log",
+    "tools/contracts/evidence/BOOT-004-publication.log"
+  ]
+}

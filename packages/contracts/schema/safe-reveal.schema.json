@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:safe-reveal:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "promptId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "roundId": {
+      "type": "string",
+      "enum": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10"
+      ]
+    },
+    "songs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "songId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,128}$"
+          },
+          "displayTitle": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "sectionLabel": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "songId",
+          "displayTitle",
+          "sectionLabel"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 2
+    },
+    "explanationKey": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "promptId",
+    "roundId",
+    "songs",
+    "explanationKey"
+  ],
+  "additionalProperties": false
+}

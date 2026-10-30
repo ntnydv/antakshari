@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:score-entry:v1",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "entryId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "attemptId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "teamId": {
+      "type": "string",
+      "enum": [
+        "A",
+        "B"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "identification",
+        "singing",
+        "steal",
+        "hint",
+        "penalty",
+        "correction"
+      ]
+    },
+    "requestedDelta": {
+      "type": "integer",
+      "minimum": -100,
+      "maximum": 100
+    },
+    "appliedDelta": {
+      "type": "integer",
+      "minimum": -100,
+      "maximum": 100
+    },
+    "capEffect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "floor",
+        "ceiling"
+      ]
+    },
+    "reasonCode": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    },
+    "correctionOf": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "rulesVersion": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,128}$"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "entryId",
+    "attemptId",
+    "teamId",
+    "category",
+    "requestedDelta",
+    "appliedDelta",
+    "capEffect",
+    "reasonCode",
+    "correctionOf",
+    "rulesVersion"
+  ],
+  "additionalProperties": false
+}

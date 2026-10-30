@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatorVersion": 1,
+  "sha256": {
+    "schema/adjudication.schema.json": "de4423494dd61ff8ad4d0d1a358be2fad883a7b302a6116eae1fa496cd64e7f4",
+    "schema/attempt.schema.json": "9c4acb883e6aa4f2a82d4701e27354330e30ad2e7dd64f2b62fea59a98adf433",
+    "schema/command-receipt.schema.json": "c994b63159b3dbc31efcd4fc8db1bf3334152294335b23998a427d4729a9e07f",
+    "schema/command.schema.json": "6e6bff701512d82ee41a2a0ab10372dd02867bbc85b5559ada49bb578d22db76",
+    "schema/domain-event.schema.json": "0dfd4a27c217750284812900294b0d7c705113714b4049a0197791b960454332",
+    "schema/error.schema.json": "9dc29f1a73af129002058ffa8fc9ee8be609661f37fa9255f074f091acaa9166",
+    "schema/model-evidence.schema.json": "267e87678327732ae2bd08e85704834493126915c093724df13e58779866933a",
+    "schema/private-role-view.schema.json": "51df776b6c8bd157d077168ea53310724d61c473d5305746479f25886b90f363",
+    "schema/recording-grant.schema.json": "cd441172f9b45d6b909b479f4c043cdba50550d0b8ff8ac7a42460a518f4b280",
+    "schema/room-projection.schema.json": "5dca883410fe91a504799f98d2f279a105b602b82f25e59ef2e45b72cfd9522a",
+    "schema/round-config.schema.json": "de3725c153575e1c826c45c126a9d200a503307a8402f3b14d5f515922476b78",
+    "schema/safe-cue.schema.json": "a84ebab12c25177e9a77881b653fd0d9ba154b6569241a9b64971a807d102275",
+    "schema/safe-reveal.schema.json": "dd1d7d8d720b37a0a793545cd3805086e5bdfdeda7f62d749580f87858a7e338",
+    "schema/score-entry.schema.json": "5cccdaabf62fa25816a8474874a1ad7909e2667e7efd97ac937e59b8184b97f5",
+    "schema/snapshot.schema.json": "d83e531992d2f8c32e214f8bb86cda6a8a598d3464b32464c275490f976500a6",
+    "schema/task-result.schema.json": "5ec738a73ab80806ec8edf610b36f775c09c3a62c8c6607cc112630f3c5d552e",
+    "schema/transcript-evidence.schema.json": "8f9d1f8840f3d258cc7d73fe2a659f15d059267e926cbfdaa53dfabf6cbb104a",
+    "src/generated.ts": "7ad9af40265910b32dcd839926b14c13f0fa2522ec70062bc430bd3dc67b1c5a",
+    "src/schemas.generated.ts": "bb864af798b1f54d18870db77afa7c0f97e83599083b7f8ad39eedaded0c41b1",
+    "dart/lib/src/bindings.g.dart": "ae5b7544ab351df20f0af1ce805fe33209058e602c90c53f3e8d07b633b6870a",
+    "dart/lib/src/schemas.g.dart": "d2a069b43c53af7353ec99db7dca0c35bfd30fcc69471c8c3c66992407e2915e"
+  }
+}

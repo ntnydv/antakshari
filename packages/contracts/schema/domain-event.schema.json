@@ -1,0 +1,638 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:antakshari:domain-event:v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "snapshot.updated"
+        },
+        "payload": {
+          "$ref": "urn:antakshari:snapshot:v1"
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "cue.started"
+        },
+        "payload": {
+          "$ref": "urn:antakshari:safe-cue:v1"
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "answer.opened"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "promptId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,128}$"
+            },
+            "phaseToken": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,128}$"
+            },
+            "activeUid": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9_-]{1,128}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "deadlineMs": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "promptId",
+            "phaseToken",
+            "activeUid",
+            "deadlineMs"
+          ],
+          "additionalProperties": false
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "attempt.changed"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "attemptId": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9_-]{1,128}$"
+            },
+            "generation": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "granted",
+                "capturing",
+                "sealed",
+                "adjudicating",
+                "review_pending",
+                "settled",
+                "cancelled"
+              ]
+            }
+          },
+          "required": [
+            "attemptId",
+            "generation",
+            "status"
+          ],
+          "additionalProperties": false
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "round.revealed"
+        },
+        "payload": {
+          "$ref": "urn:antakshari:safe-reveal:v1"
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "score.changed"
+        },
+        "payload": {
+          "$ref": "urn:antakshari:score-entry:v1"
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "schemaVersion": {
+          "const": 1
+        },
+        "eventId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "matchId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]{1,128}$"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "occurredAtMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "match.finished"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "resultStatus": {
+              "type": "string",
+              "enum": [
+                "verified",
+                "provisional",
+                "abandoned"
+              ]
+            },
+            "scores": {
+              "type": "object",
+              "properties": {
+                "A": {
+                  "type": "integer"
+                },
+                "B": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "A",
+                "B"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "resultStatus",
+            "scores"
+          ],
+          "additionalProperties": false
+        },
+        "metadata": {
+          "type": "object",
+          "maxProperties": 5,
+          "properties": {
+            "delivery_attempt": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "replay": {
+              "type": "boolean"
+            },
+            "trace_sampled": {
+              "type": "boolean"
+            },
+            "x_metric_resync": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "x_metric_delivery_latency_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1000000
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "schemaVersion",
+        "eventId",
+        "matchId",
+        "seq",
+        "version",
+        "occurredAtMs",
+        "type",
+        "payload"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}
